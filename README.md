@@ -23,7 +23,7 @@ Download all example code from here: https://github.com/NameBright/DropCatchBack
 Supported Functions
 -------------------
 - Backorder one or more domain names
-- Cancel one or more domains names
+- Cancel one or more domain backorders
 
 Example Responses
 -----------------
