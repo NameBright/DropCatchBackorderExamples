@@ -1,7 +1,7 @@
 DropCatchBackorderExamples
 ==========================
 
-We have exposed DropCatch.com API functions so that you can programmatically backorder domains. This feature makes use of NameBright.com API accounts, and is very similar to using the REST endpoint for the NameBright.com API.
+We have exposed DropCatch.com API functions so that you can programmatically backorder domains. This feature makes use of NameBright.com API accounts, and is very similar to using the [REST](https://api.namebright.com/rest/Help "NameBright.com REST Domain API") endpoint for the  [NameBright.com Domain API](https://github.com/NameBright/DomainApiClientExamples "NameBright.com Domain API").
 
 Requirements
 ------------
@@ -10,7 +10,7 @@ Requirements
 3. Your API account in NameBright.com must have the "Register Domains" permission.
 4. Your API account must have an IP whitelist defined.
 5. You must have logged into DropCatch.com using your NameBright.com credentials at least once.
-6. Before calling the API functions, you must retrieve a bearer token from the NameBright auth endpoint (see the examples).
+6. Before calling the API functions, you must retrieve a bearer token from the [NameBright.com Auth](https://api.namebright.com/auth/help) endpoint (see the examples).
 
 Example Code
 ------------
