@@ -12,7 +12,7 @@ namespace CSharpExample
     {
         static void Main(string[] args)
         {
-            if (args.Length < 2)
+            if (args.Length < 3)
             {
                 PrintUsage();
                 return;
@@ -29,8 +29,13 @@ namespace CSharpExample
                 httpClient.DefaultRequestHeaders.Add("Authorization", String.Format("Bearer {0}", accessToken ?? String.Empty));
                 httpClient.BaseAddress = new Uri("https://www.dropcatch.com/");
 
-
-                string data = JsonConvert.SerializeObject(args.Skip(1));
+                var request = new BackorderRequest()
+                {
+                    routingCode = args[1],
+                    domains = args.Skip(2).ToList()
+                };
+                
+                string data = JsonConvert.SerializeObject(request);
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage result = null;
@@ -78,7 +83,13 @@ namespace CSharpExample
 
         static void PrintUsage() 
         {
-            Console.WriteLine("CSharpExample.exe cancel|backorder domain1[,maxbid] [domain2[,maxbid]] [domain3[,maxbid]] ... [domainn[,maxbid]]");
+            Console.WriteLine("CSharpExample.exe cancel|backorder standard|discount domain1[,maxbid] [domain2[,maxbid]] [domain3[,maxbid]] ... [domainn[,maxbid]]");
         }
+    }
+
+    public class BackorderRequest
+    {
+        public string routingCode { get; set; }
+        public List<string> domains { get; set; }
     }
 }
